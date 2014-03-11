@@ -21,8 +21,8 @@
   "author": "Hsiu-Fan Wang <hfwang@porkbuns.net> (http://hsiufan.eats.porkbuns.net/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hfwang/sqlite3-fts4-rank/issues"
+    "url": "https://github.com/hfwang/node-sqlite3-fts4-rank/issues"
   },
-  "homepage": "https://github.com/hfwang/sqlite3-fts4-rank",
+  "homepage": "https://github.com/hfwang/node-sqlite3-fts4-rank",
   "dependencies": { }
 }
