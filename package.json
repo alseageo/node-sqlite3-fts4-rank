@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hfwang/sqlite3-fts4-rank.git"
+    "url": "git://github.com/hfwang/node-sqlite3-fts4-rank.git"
   },
   "keywords": [
     "sqlite",
