@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-module.exports = exports = addRankExt = function(sqlite, callback) {
+module.exports = exports = function(sqlite, callback) {
   var base_path    = __dirname + '/build/Release/fts4-rank';
   var linux_path   = base_path + '.so';
   var osx_path     = base_path + '.dylib';
@@ -15,7 +15,7 @@ module.exports = exports = addRankExt = function(sqlite, callback) {
   } else if (fs.existsSync(windows_path)) {
     extension_path = windows_path;
   } else {
-    throw new Error("Unable to find fts4-rank extension.");
+    callback(new Error("Unable to find fts4-rank extension."));
   }
 
   sqlite.loadExtension(extension_path, callback);

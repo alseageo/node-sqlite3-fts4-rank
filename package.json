@@ -4,7 +4,8 @@
   "description": "Node module wrapper for building a full text search ranking function as a loadable SQLite extension.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "make lint && make test",
+    "lint": "make lint"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,12 @@
     "url": "https://github.com/hfwang/node-sqlite3-fts4-rank/issues"
   },
   "homepage": "https://github.com/hfwang/node-sqlite3-fts4-rank",
-  "dependencies": { }
+  "dependencies": { },
+  "devDependencies": {
+    "sqlite3": "~2.2.0",
+    "should": "~3.1.3",
+    "mocha": "~1.17.1",
+    "jshint": "~2.4.4",
+    "async": "~0.2.10"
+  }
 }

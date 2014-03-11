@@ -1,13 +1,15 @@
-all: linux
-	#Linux
+SPEC = spec/spec.js
 
-linux:
-	gcc -Wall -Werror -shared -fPIC -Isqlite3 -o fts4-rank.sqlext fts4-rank.c
-	#Using GCC on Mac OSX
+test:
+	./node_modules/mocha/bin/_mocha spec --check-leaks -R spec
 
-darwin:
-	gcc -Wall -Werror -bundle -fPIC -Isqlite3 -o fts4-rank.sqlext fts4-rank.c
+test-w:
+	./node_modules/.bin/_mocha --watch --growl --reporter min spec
 
-win32:
-	#Microsoft Tools on Windows
-	cl /Gd fts4-rank.c /I sqlite3 /DDLL /LD /link /export:sqlite3_extension_init /out:fts4-rank.sqlext
+lint:
+	node_modules/.bin/jshint index.js spec
+
+init-testing update-testing:
+	npm install
+
+.PHONY: test test-w init-testing update-testing
