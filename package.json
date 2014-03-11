@@ -1,0 +1,28 @@
+{
+  "name": "sqlite3-fts4-rank",
+  "version": "1.0.0",
+  "description": "Node module wrapper for building a full text search ranking function as a loadable SQLite extension.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hfwang/sqlite3-fts4-rank.git"
+  },
+  "keywords": [
+    "sqlite",
+    "sqlite3",
+    "fts4",
+    "rank",
+    "extension",
+    "native"
+  ],
+  "author": "Hsiu-Fan Wang <hfwang@porkbuns.net> (http://hsiufan.eats.porkbuns.net/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hfwang/sqlite3-fts4-rank/issues"
+  },
+  "homepage": "https://github.com/hfwang/sqlite3-fts4-rank",
+  "dependencies": { }
+}

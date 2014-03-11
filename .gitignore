@@ -1,3 +1,5 @@
 *.sqlext
 *.sqlite3
 *.sw*
+build
+node_modules
