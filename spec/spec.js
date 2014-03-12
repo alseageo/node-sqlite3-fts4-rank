@@ -10,9 +10,10 @@ describe('SQLite3 is compiled with FTS enabled', function() {
   var db;
 
   before(function(done) {
-    db = new sqlite3.Database(':memory:', done);
-    // bind index:
-    require('../index')(db);
+    db = new sqlite3.Database(':memory:');
+
+    // bind extension:
+    require('../index')(db, done);
   });
 
   it('should create FTS table', function(done) {
