@@ -65,7 +65,7 @@ static void rankfunc(sqlite3_context *pCtx, int nVal, sqlite3_value **apVal){
     /* Now iterate through each column in the users query. For each column,
     ** increment the relevancy score by:
     **
-    **   (<hit count> / <global hit count>) * <column weight>
+    **   (<hit count>) * <column weight>
     **
     ** aPhraseinfo[] points to the start of the data for phrase iPhrase. So
     ** the hit count and global hit counts for each column are found in 
@@ -74,11 +74,10 @@ static void rankfunc(sqlite3_context *pCtx, int nVal, sqlite3_value **apVal){
     unsigned int *aPhraseinfo = &aMatchinfo[2 + iPhrase*nCol*3];
     for(iCol=0; iCol<nCol; iCol++){
       int nHitCount = aPhraseinfo[3*iCol];
-      int nGlobalHitCount = aPhraseinfo[3*iCol+1];
       double weight = defaultWeight;
       if ( (1 + iCol) < nVal ) weight = sqlite3_value_double(apVal[1 + iCol]);
       if( nHitCount>0 ){
-        score += ((double)nHitCount / (double)nGlobalHitCount) * weight;
+        score += ((double)nHitCount) * weight;
       }
     }
   }
